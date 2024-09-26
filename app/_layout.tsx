@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/presentation/hooks/useColorScheme';
+import PermissionsCheckerProvider from '@/presentation/providers/PermissionsCheckerProvider';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,18 +33,20 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="loading/index" options={{ animation: 'none' }} />
-        <Stack.Screen name="map/index" options={{ animation: 'fade' }} />
-        <Stack.Screen
-          name="permissions/index"
-          options={{ animation: 'fade' }}
-        />
-      </Stack>
+      <PermissionsCheckerProvider>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="loading/index" options={{ animation: 'none' }} />
+          <Stack.Screen name="map/index" options={{ animation: 'fade' }} />
+          <Stack.Screen
+            name="permissions/index"
+            options={{ animation: 'fade' }}
+          />
+        </Stack>
+      </PermissionsCheckerProvider>
     </ThemeProvider>
   );
 }
