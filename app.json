@@ -13,10 +13,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "config": {
+        "googleMapsApiKey": "AIzaSyB3RZuMGba4XFVET_bC92cYXkkqIjtX174"
+      },
       "supportsTablet": true,
       "bundleIdentifier": "com.klerith.mapsapp"
     },
     "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDpt8KyLVOi5ZZg4XWnVSM7QMjkob56BAw"
+        }
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
