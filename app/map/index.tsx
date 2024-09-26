@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 const MapScreen = () => {
   return (
@@ -7,7 +7,7 @@ const MapScreen = () => {
         // showsPointsOfInterest={false}
         style={styles.map}
         // 45.412560, -75.698931
-        provider={PROVIDER_GOOGLE}
+        // provider={PROVIDER_GOOGLE}
         initialRegion={{
           latitude: 45.41256,
           longitude: -75.698931,
